@@ -1,4 +1,4 @@
-package tictactoe;
+//Simple TicTacToe game based on Hyperskill.org coding school project
 import java.util.Scanner;
 import java.util.Random;
 class player{
