@@ -1,4 +1,6 @@
 //Simple TicTacToe game based on Hyperskill.org coding school project
+//Begin game with Input Command: start user easy
+
 import java.util.Scanner;
 import java.util.Random;
 class player{
