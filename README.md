@@ -1,5 +1,5 @@
 # newbTicTacToeJava
-Second project from Hyperskill self paced learning in Java.  Basic OO principals and more advanced data structures.</br>
+Second project from Hyperskill self paced learning in Java.  Basic OOP principals and more advanced data structures.  Also really trying to better understand git and Github.</br>
 
 Instructions: (This is not how I would have done it, but I was constrained by the course work created by hyperskill.org)</br>
 Input Commands: "start" followed by "user" followed by "easy" "medium" or "hard"</br>

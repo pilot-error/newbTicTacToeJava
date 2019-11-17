@@ -1,5 +1,5 @@
 //Simple TicTacToe game based on Hyperskill.org coding school project
-//Begin game with Input Command: start user easy
+//Begin game with Input commands: start user easy
 
 import java.util.Scanner;
 import java.util.Random;
@@ -8,36 +8,26 @@ class player{
     private char mark;
     char markOther;
 
-
     public player(String playerType, char mark) {
         this.playerType = playerType;
         this.mark = mark;
         this.markOther = this.mark=='X'?'O':'X'; //Other players mark
-
     }
 
-    String getPlayerType() {
-        return playerType;
-    }
-
-    void setPlayerType(String playerType) {
-        this.playerType = playerType;
-    }
-
-    char getMark() {
-        return mark;
-    }
+    String getPlayerType() {return playerType;}
+    void setPlayerType(String playerType) {this.playerType = playerType; }
+    char getMark() {return mark; }
     char getMarkOther() { return markOther;}
 }
+
 //This is my second project on the path to learn Java.  My first project with some minor principals of object oriented design.
 public class Main {
-    enum stateType {
+    enum stateType { //Possible states the game can be in. GNF = Game Not Finished
         START, GNF, IMPOSSIBLE, EXIT, DRAW, XWIN, OWIN
     }
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-
         char[] board = new char[9];
         boolean playing = true;
         player p1= new player("easy",'X');
@@ -47,7 +37,6 @@ public class Main {
         int turn=0;
 
         while (playing) {
-
             switch (state) {
                 case START:
                     userCmd = newGame();
@@ -75,9 +64,7 @@ public class Main {
                     break;
                 case DRAW:
                     System.out.println("Game was a draw.");
-                  //  System.out.println("\nPlay again?");
                     state = stateType.START;
-
                     break;
                 case EXIT:
                     System.out.println("Thanks for playing.");
@@ -85,27 +72,23 @@ public class Main {
                     break;
                 case XWIN:
                     System.out.println("X Wins.");
-                   // System.out.println("\n Play again?");
                     state = stateType.START;
-
                     break;
                 case OWIN:
                     System.out.println("O Wins.");
-                    //System.out.println("\nPlay again?");
                     state = stateType.START;
-
                     break;
                 default:  //Also IMPOSSIBLE state
                     System.out.println("Game experienced a problem.");
-                    //System.out.println("\nPlay again?");
                     state = stateType.START;
             }
 
             if (state == stateType.START||state == stateType.EXIT) {
                 //If Start then do NOT update state and go to beginning of loop
                 }
-            else {state = checkState(board, turn); } //Else update the state
-
+            else {//Else update the state
+                state = checkState(board, turn);
+            }
         }
     }
 
